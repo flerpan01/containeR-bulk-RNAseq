@@ -2,8 +2,6 @@
 
 Singularity image with pre-installed libraries for running bulk RNA-seq analysis
 
----
-
 The included libraries:
 
 #### Visualisation
@@ -38,15 +36,17 @@ The included libraries:
 
 ---
 
-## Build locally
+## Build
+
+Use the definition file to build locally:
 
 ```sh
 apptainer build bulk-RNAseq.sif bulk-RNAseq.def
 ```
 
-## Download from the cloud
+## Deploy
 
-Pre-build image can be downloaded from the [Cloud Library](https://cloud.sylabs.io/libray)
+Pre-build image can be downloaded from the [Cloud Library](https://cloud.sylabs.io/libray):
 
 ```sh
 apptainer pull library://flerpan01/singularity-r/bulk-rnaseq:latest
