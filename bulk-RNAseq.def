@@ -2,14 +2,14 @@ Bootstrap: docker
 From: bioconductor/bioconductor_docker:latest
 
 %labels
-	Author https://github.com/flerpan01
+Author https://github.com/flerpan01
 
 %environment
-	export LC_ALL=C
+export LC_ALL=C
 
 %post
-	# CRAN packages
-	cat << EOF > pkgs-CRAN.txt
+# CRAN packages
+cat << EOF > pkgs-CRAN.txt
 ggplot2
 gtools
 tools
@@ -24,16 +24,17 @@ openxlsx
 patchwork
 EOF
 
-	R -e "install.packages(readLines('pkgs-CRAN.txt'))"
+R -e "install.packages(readLines('pkgs-CRAN.txt'))"
 
-	# Bioconductor packages
-	cat << EOF > pkgs-Bioc.txt
+# Bioconductor packages
+cat << EOF > pkgs-Bioc.txt
 clusterProfiler
 edgeR
 DESeq2
+tximport
 biomaRt
 ComplexHeatmap
 org.Mm.eg.db
 EOF
 
-	R -e "BiocManager::install(readLines('pkgs-Bioc.txt'))"
+R -e "BiocManager::install(readLines('pkgs-Bioc.txt'))"

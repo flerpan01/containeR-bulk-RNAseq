@@ -46,7 +46,7 @@ apptainer build bulk-RNAseq.sif bulk-RNAseq.def
 
 ## Deploy
 
-Pre-build image can be downloaded from the [Cloud Library](https://cloud.sylabs.io/libray):
+Pre-build image can be downloaded from the [Cloud Library](https://cloud.sylabs.io/library):
 
 ```sh
 apptainer pull library://flerpan01/singularity-r/bulk-rnaseq:latest
