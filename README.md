@@ -24,6 +24,7 @@ The included libraries:
 + clusterProfiler
 + biomaRt
 + org.Mm.eg.db
++ tximport
 
 #### Utility
 
