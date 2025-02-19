@@ -38,3 +38,6 @@ org.Mm.eg.db
 EOF
 
 R -e "BiocManager::install(readLines('pkgs-Bioc.txt'))"
+
+%runscript
+Rscript "$@"
