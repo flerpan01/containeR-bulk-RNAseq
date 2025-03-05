@@ -21,9 +21,11 @@ The included libraries:
 
 #### Gene and genome annotation
 
-+ clusterProfiler
++ [clusterProfiler](https://www.bioconductor.org/packages/release/bioc/html/clusterProfiler.html)
++ [ReactomePA](https://bioconductor.org/packages/release/bioc/html/ReactomePA.html)
 + biomaRt
-+ org.Mm.eg.db
++ [org.Mm.eg.db](https://bioconductor.org/packages/release/data/annotation/html/org.Mm.eg.db.html)
++ [org.Hs.eg.db](https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html)
 + tximport
 
 #### Utility

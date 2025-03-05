@@ -35,6 +35,7 @@ tximport
 biomaRt
 ComplexHeatmap
 org.Mm.eg.db
+ReactomePA
 EOF
 
 R -e "BiocManager::install(readLines('pkgs-Bioc.txt'))"
