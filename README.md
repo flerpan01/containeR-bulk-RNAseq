@@ -1,6 +1,6 @@
 # README
 
-Singularity image with pre-installed libraries for running bulk RNA-seq analysis
+Singularity image with pre-installed libraries for running bulk RNA-seq analysis in [`R`](https://www.r-project.org/).
 
 The included libraries:
 
@@ -37,8 +37,6 @@ The included libraries:
 + forcats
 + openxlsx
 
----
-
 ## Build
 
 Use the definition file to build locally:
@@ -64,3 +62,31 @@ apptainer pull library://flerpan01/singularity-r/bulk-rnaseq:latest
 ># add singularity cloud URI
 >apptainer remote add --no-login SylabsCloud cloud.sycloud.io
 >```
+
+## Execute scripts
+
+In order to fully utilise the singularity image make sure a shebang is included in the script file `#!/usr/bin/env Rscript`.
+
+```r
+#!/usr/bin/env Rscript
+
+suppressPackageStartupMessages({
+	library(edgeR)
+	library(gtools)
+})
+
+...
+
+```
+
+Also make the script file executable. 
+
+```sh
+chmod +x script-file.R
+```
+
+The singularity image expects a script file on `exec`.
+
+```sh
+apptainer exec library://flerpan01/singularity-r/bulk-rnaseq:latest script-file.R
+```
