@@ -2,13 +2,21 @@ Bootstrap: docker
 From: bioconductor/bioconductor_docker:latest
 
 %labels
-Author https://github.com/flerpan01
+	Author https://github.com/flerpan01
 
 %environment
-export LC_ALL=C
+	export LC_ALL=C
 
 %post
-# CRAN packages
+  # Install less
+  apt-get update && apt-get install -y less
+  # Clean up apt cache to reduce image size
+  apt-get clean
+  rm -rf /var/lib/apt/lists/*
+
+# ~~ install R libraries ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+# from CRAN
 cat << EOF > pkgs-CRAN.txt
 ggplot2
 gtools
@@ -26,7 +34,7 @@ EOF
 
 R -e "install.packages(readLines('pkgs-CRAN.txt'))"
 
-# Bioconductor packages
+# from Bioconductor
 cat << EOF > pkgs-Bioc.txt
 clusterProfiler
 edgeR
@@ -41,4 +49,4 @@ EOF
 R -e "BiocManager::install(readLines('pkgs-Bioc.txt'))"
 
 %runscript
-Rscript "$@"
+	Rscript "$@"
