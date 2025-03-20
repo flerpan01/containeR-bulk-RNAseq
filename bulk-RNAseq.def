@@ -30,6 +30,7 @@ cowplot
 ggsignif
 openxlsx
 patchwork
+readr
 EOF
 
 R -e "install.packages(readLines('pkgs-CRAN.txt'))"

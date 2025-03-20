@@ -36,6 +36,7 @@ The included libraries:
 + data.table
 + forcats
 + openxlsx
++ readr
 
 ## Build
 
