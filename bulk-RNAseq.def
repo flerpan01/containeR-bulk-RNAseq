@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: bioconductor/bioconductor_docker:latest
+From: bioconductor/bioconductor_docker:devel
 
 %labels
 	Author https://github.com/flerpan01

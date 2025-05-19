@@ -1,3 +1,6 @@
+[![R](https://img.shields.io/badge/-script-276DC3.svg?style=flat&logo=R)](https://cran.r-project.org)
+[![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
+
 # README
 
 Singularity image with pre-installed libraries for running bulk RNA-seq analysis in [`R`](https://www.r-project.org/).
@@ -68,12 +71,12 @@ apptainer pull library://flerpan01/singularity-r/bulk-rnaseq:latest
 
 In order to fully utilise the singularity image make sure a shebang is included in the script file `#!/usr/bin/env Rscript`.
 
-```r
+```R
 #!/usr/bin/env Rscript
 
 suppressPackageStartupMessages({
-	library(edgeR)
-	library(gtools)
+  library(edgeR)
+  library(gtools)
 })
 
 ...
